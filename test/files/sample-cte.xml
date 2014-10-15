@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cteProc xmlns="http://www.portalfiscal.inf.br/cte" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portalfiscal.inf.br/cte procCTe_v2.00.xsd" versao="2.00">
+  <CTe xmlns="http://www.portalfiscal.inf.br/cte">
+    <infCte Id="CTe421135201476170039509622024098982747234729" versao="2.00">
+      <ide>
+        <cUF>42</cUF>
+        <cCT>99980032</cCT>
+        <CFOP>6352</CFOP>
+        <natOp>PREST. SERV. TRANSPORTE A ESTABELECIMENTO INDUSTRIAL</natOp>
+        <forPag>0</forPag>
+        <mod>57</mod>
+        <serie>1</serie>
+        <nCT>199677</nCT>
+        <dhEmi>2014-09-22T21:09:00</dhEmi>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>9</cDV>
+        <tpAmb>1</tpAmb>
+        <tpCTe>0</tpCTe>
+        <procEmi>0</procEmi>
+        <verProc>2.00</verProc>
+        <cMunEnv>4202404</cMunEnv>
+        <xMunEnv>BLUMENAU</xMunEnv>
+        <UFEnv>SC</UFEnv>
+        <modal>01</modal>
+        <tpServ>0</tpServ>
+        <cMunIni>4214805</cMunIni>
+        <xMunIni>RIO DO SUL</xMunIni>
+        <UFIni>SC</UFIni>
+        <cMunFim>2611606</cMunFim>
+        <xMunFim>RECIFE</xMunFim>
+        <UFFim>PE</UFFim>
+        <retira>0</retira>
+        <xDetRetira>NAO SE APLICA</xDetRetira>
+        <toma03>
+          <toma>0</toma>
+        </toma03>
+      </ide>
+      <compl>
+        <ObsCont xCampo="LeidaTransparencia">
+          <xTexto>
+            O valor aproximado de tributos incidentes sobre o preco deste servico e de R$ 8,16
+          </xTexto>
+        </ObsCont>
+      </compl>
+      <emit>
+        <CNPJ>20147617000575</CNPJ>
+        <IE>254425410</IE>
+        <xNome>EMITENTE</xNome>
+        <xFant>Emitente</xFant>
+        <enderEmit>
+          <xLgr>RUA</xLgr>
+          <nro>180</nro>
+          <xBairro>BAIRRO</xBairro>
+          <cMun>4202404</cMun>
+          <xMun>BLUMENAU</xMun>
+          <CEP>8900000</CEP>
+          <UF>SC</UF>
+          <fone>554732363000</fone>
+        </enderEmit>
+      </emit>
+      <rem>
+        <CNPJ>85139558000105</CNPJ>
+        <IE>252322746</IE>
+        <xNome>REMETENTE</xNome>
+        <xFant>Remetente</xFant>
+        <fone>4734110500</fone>
+        <enderReme>
+          <xLgr>Rua</xLgr>
+          <nro>2222</nro>
+          <xBairro>Bairro</xBairro>
+          <cMun>4214805</cMun>
+          <xMun>RIO DO SUL</xMun>
+          <CEP>89000000</CEP>
+          <UF>SC</UF>
+        </enderReme>
+      </rem>
+      <dest>
+        <CNPJ>23401920000540</CNPJ>
+        <IE>050632990</IE>
+        <xNome>Destinatario</xNome>
+        <fone>9999999999</fone>
+        <enderDest>
+          <xLgr>Rua</xLgr>
+          <nro>130</nro>
+          <xBairro>Bairro</xBairro>
+          <cMun>2611606</cMun>
+          <xMun>RECIFE</xMun>
+          <CEP>5100000</CEP>
+          <UF>PE</UF>
+        </enderDest>
+      </dest>
+      <vPrest>
+        <vTPrest>116.63</vTPrest>
+        <vRec>116.63</vRec>
+        <Comp>
+          <xNome>Pedagio</xNome>
+          <vComp>6.62</vComp>
+        </Comp>
+        <Comp>
+          <xNome>TAS</xNome>
+          <vComp>4.46</vComp>
+        </Comp>
+        <Comp>
+          <xNome>GRIS</xNome>
+          <vComp>7.44</vComp>
+        </Comp>
+        <Comp>
+          <xNome>Frete Peso (FM)</xNome>
+          <vComp>98.11</vComp>
+        </Comp>
+      </vPrest>
+      <imp>
+        <ICMS>
+          <ICMS00>
+            <CST>00</CST>
+            <vBC>116.63</vBC>
+            <pICMS>7.00</pICMS>
+            <vICMS>8.16</vICMS>
+          </ICMS00>
+        </ICMS>
+        <vTotTrib>8.16</vTotTrib>
+      </imp>
+      <infCTeNorm>
+        <infCarga>
+          <vCarga>4614.76</vCarga>
+          <proPred>CONFORME NOTA FISCAL CLIENTE</proPred>
+          <xOutCat>FRACIONADA</xOutCat>
+          <infQ>
+            <cUnid>01</cUnid>
+            <tpMed>PESO DECLARADO</tpMed>
+            <qCarga>33.3000</qCarga>
+          </infQ>
+          <infQ>
+            <cUnid>00</cUnid>
+            <tpMed>PESO CUBADO</tpMed>
+            <qCarga>48.2400</qCarga>
+          </infQ>
+          <infQ>
+            <cUnid>03</cUnid>
+            <tpMed>VOLUME</tpMed>
+            <qCarga>3.0000</qCarga>
+          </infQ>
+        </infCarga>
+        <infDoc>
+          <infNFe>
+            <chave>31231298009000248237234832118423123124354787</chave>
+          </infNFe>
+        </infDoc>
+        <seg>
+          <respSeg>4</respSeg>
+          <xSeg>SEGURADORA</xSeg>
+          <nApol>1298309213840981</nApol>
+          <vCarga>4614.76</vCarga>
+        </seg>
+        <infModal versaoModal="2.00">
+          <rodo>
+            <RNTRC>2342546</RNTRC>
+            <dPrev>2014-09-29</dPrev>
+            <lota>0</lota>
+          </rodo>
+        </infModal>
+      </infCTeNorm>
+    </infCte>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+        <Reference URI="#CTe42140920147617000575570010001996771999800329">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+          <DigestValue>
+            QHvqVAHfnK+foqm0Ajv+zOEWe5I=
+          </DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>
+        TDAKDSAKD123ASDASD313KWFçLDLKFSPDF=4324H3H4879U913CBjdg56tyabri087082GYG8YBH2FH2IH5TC9GCNOB6HIH6IHIHIHljhS2hgx+Go4DmupDHsBBq/QIKZqtFSMtju+4eMU3JOIh1Bcpfo8Nub8lPYL5/8teJjjTZhpZmA2HAJnfye18712LEIueEnAC3m85AcN4pvp5bAnpAnbRMyAKB/wrm1ELR2qmNPmXbiuw==
+      </SignatureValue>
+      <KeyInfo>
+        <X509Data>
+          <X509Certificate>
+            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
+          </X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </CTe>
+  <protCTe versao="2.00">
+    <infProt Id="CTe129837127937219">
+      <tpAmb>1</tpAmb>
+      <verAplic>1.1.1.9</verAplic>
+      <chCTe>421135201476170039509622024098982747234729</chCTe>
+      <dhRecbto>2014-09-22T21:10:40</dhRecbto>
+      <nProt>123264776009073909</nProt>
+      <digVal>QHvqVAHfnK+fjda21AjvAER+zOEWe5I=</digVal>
+      <cStat>100</cStat>
+      <xMotivo>Autorizado o uso do CT-e</xMotivo>
+    </infProt>
+  </protCTe>
+</cteProc>
