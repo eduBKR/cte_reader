@@ -4,8 +4,8 @@ module Cte
       include AttributeHelper
       include CreatorHelper
 
-      attr_reader :rntrc, :date, :capacity, :ciot, :collection,
-        :toll, :vehicle, :seals, :driver
+      attr_reader :rntrc, :date, :capacity, :ciot, :collections,
+        :tolls, :vehicle, :seals, :drivers
 
       # == Fields Values
       # 
@@ -22,12 +22,12 @@ module Cte
 
         # Coletas
         if attrs[:occ]
-          @collection = create_resources(Collection, attrs[:occ])
+          @collections = create_resources(Collection, attrs[:occ])
         end
 
         # Vales pedagios
         if attrs[:valePed]
-          @toll = create_resources(Toll, attrs[:valePed])
+          @tolls = create_resources(Toll, attrs[:valePed])
         end
 
         # Veiculo
@@ -41,7 +41,7 @@ module Cte
         end
 
         if attrs[:moto]
-          @driver = create_resources(Person, attrs[:moto])
+          @drivers = create_resources(Person, attrs[:moto])
         end
       end
     end

@@ -49,15 +49,15 @@ describe Cte::Reader::Information do
     information.cargo.must_be_instance_of Cte::Reader::Cargo
   end
 
-  it '#nf' do
-    information.nf.first.must_be_instance_of Cte::Reader::Nf
+  it '#nfs' do
+    information.nfs.first.must_be_instance_of Cte::Reader::Nf
   end
 
-  it '#nfe' do
-    information.nfe.first.must_be_instance_of Cte::Reader::Nfe
+  it '#nfes' do
+    information.nfes.first.must_be_instance_of Cte::Reader::Nfe
   end
 
-  it '#other' do
-    information.other.first.must_be_instance_of Cte::Reader::OtherDocument
+  it '#other_documents' do
+    information.other_documents.first.must_be_instance_of Cte::Reader::OtherDocument
   end
 end

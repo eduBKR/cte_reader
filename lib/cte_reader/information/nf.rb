@@ -7,7 +7,7 @@ module Cte
       attr_reader :romaneio, :request_number, :model, :serie,
         :number, :date, :icms_base, :icms, :icms_st_base,
         :icms_st, :product_value, :total, :cfop, :weight, 
-        :pin, :delivery_date, :transport_unit, :cargo_unit
+        :pin, :delivery_date, :transport_units, :cargo_units
 
       def initialize(attrs = {})
         # Romaneio
@@ -45,12 +45,12 @@ module Cte
 
         # Unidade de Transporte
         if attrs[:infUnidTransp]
-          @transport_unit = create_resources(TransportUnit, attrs[:infUnidTransp])
+          @transport_units = create_resources(TransportUnit, attrs[:infUnidTransp])
         end
 
         # Unidade de Carga
         if attrs[:infUnidCarga]
-          @cargo_unit = create_resources(CargoUnit, attrs[:infUnidCarga])
+          @cargo_units = create_resources(CargoUnit, attrs[:infUnidCarga])
         end
       end
     end

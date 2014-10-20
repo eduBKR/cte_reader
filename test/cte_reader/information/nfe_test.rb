@@ -36,19 +36,19 @@ describe Cte::Reader::Nfe do
     nfe.date.must_equal cte_hash[:dPrev]
   end
 
-  it '#transport_unit' do
-    nfe.transport_unit.must_be_instance_of Array
+  it '#transport_units' do
+    nfe.transport_units.must_be_instance_of Array
   end
 
-  it '#transport_unit' do
-    nfe.transport_unit.first.must_be_instance_of Cte::Reader::TransportUnit
+  it '#transport_units' do
+    nfe.transport_units.first.must_be_instance_of Cte::Reader::TransportUnit
   end
 
-  it '#cargo_unit' do
-    nfe.cargo_unit.must_be_instance_of Array
+  it '#cargo_units' do
+    nfe.cargo_units.must_be_instance_of Array
   end
 
-  it '#cargo_unit' do
-    nfe.cargo_unit.first.must_be_instance_of Cte::Reader::CargoUnit
+  it '#cargo_units' do
+    nfe.cargo_units.first.must_be_instance_of Cte::Reader::CargoUnit
   end
 end

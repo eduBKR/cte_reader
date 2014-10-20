@@ -28,11 +28,11 @@ describe Cte::Reader::Cargo do
     cargo.characteristics.must_equal cte_hash[:xOutCat]
   end
 
-  it '#amount' do
-    cargo.amount.must_be_instance_of Array
+  it '#amounts' do
+    cargo.amounts.must_be_instance_of Array
   end
 
-  it '#amount' do
-    cargo.amount.first.must_be_instance_of Cte::Reader::Amount
+  it '#amounts' do
+    cargo.amounts.first.must_be_instance_of Cte::Reader::Amount
   end
 end

@@ -1,6 +1,8 @@
 module Cte
   module Reader
     class Icms
+      include AttributeHelper
+
       attr_reader :cst, :icms_base, :icms_percentage, :icms, 
         :icms_base_reduction, :icms_st_base_retained_sender,
         :icms_st_retained, :icms_st_aliquot, :credit,

@@ -75,19 +75,19 @@ describe Cte::Reader::Highway do
     highway.vehicle.must_be_instance_of Cte::Reader::Vehicle
   end
 
-  it '#collection' do
-    highway.collection.first.must_be_instance_of Cte::Reader::Collection
+  it '#collections' do
+    highway.collections.first.must_be_instance_of Cte::Reader::Collection
   end
 
-  it '#toll' do
-    highway.toll.first.must_be_instance_of Cte::Reader::Toll
+  it '#tolls' do
+    highway.tolls.first.must_be_instance_of Cte::Reader::Toll
   end
 
-  it '#driver' do
-    highway.driver.first.must_be_instance_of Cte::Reader::Person
+  it '#drivers' do
+    highway.drivers.first.must_be_instance_of Cte::Reader::Person
   end
 
-  it '#seal' do
+  it '#seals' do
     highway.seals.must_equal [['1318238879-0'], ['5986072542-2'], ['6486762401-1']]
   end
 end

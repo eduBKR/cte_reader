@@ -52,11 +52,11 @@ describe Cte::Reader::Railway do
     railway.railroad_emitter.must_equal cte_hash[:trafMut][:ferrEmi]
   end
 
-  it '#railroad' do
-    railway.railroad.first.must_be_instance_of Cte::Reader::Railroad
+  it '#railroads' do
+    railway.railroads.first.must_be_instance_of Cte::Reader::Railroad
   end
 
-  it '#wagon' do
-    railway.wagon.first.must_be_instance_of Cte::Reader::Wagon
+  it '#wagons' do
+    railway.wagons.first.must_be_instance_of Cte::Reader::Wagon
   end
 end

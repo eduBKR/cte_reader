@@ -34,11 +34,11 @@ describe Cte::Reader::TransportUnit do
     transport.seals.must_equal [['1318238879-0'], ['5986072542-2'], ['6486762401-1']]
   end
 
-  it '#cargo_unit' do
-    transport.cargo_unit.must_be_instance_of Array
+  it '#cargo_units' do
+    transport.cargo_units.must_be_instance_of Array
   end
 
-  it '#cargo_unit' do
-    transport.cargo_unit.first.must_be_instance_of Cte::Reader::CargoUnit
+  it '#cargo_units' do
+    transport.cargo_units.first.must_be_instance_of Cte::Reader::CargoUnit
   end
 end

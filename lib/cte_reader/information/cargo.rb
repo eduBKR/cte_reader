@@ -4,7 +4,7 @@ module Cte
       include AttributeHelper
       include CreatorHelper
 
-      attr_reader :total, :product, :characteristics, :amount
+      attr_reader :total, :product, :characteristics, :amounts
 
       def initialize(attrs = {})
         # Valor Carga
@@ -16,7 +16,7 @@ module Cte
 
         # Quantidades da Carga
         if attrs[:infQ]
-          @amount = create_resources(Amount, attrs[:infQ])
+          @amounts = create_resources(Amount, attrs[:infQ])
         end
       end
     end

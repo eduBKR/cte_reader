@@ -3,8 +3,8 @@ module Cte
     class Information
       include CreatorHelper
 
-      attr_reader :cargo, :nf, :nfe, :other, :previous, :insurance,
-        :dangerous_product, :vehicle, :billing, :highway, :replacement,
+      attr_reader :cargo, :nfs, :nfes, :other_documents, :previous_documents, :insurances,
+        :dangerous_products, :vehicles, :billings, :highway, :replacement,
         :airway, :waterway, :railway, :pipeline, :multimodal
 
       def initialize(attrs = {})
@@ -16,47 +16,47 @@ module Cte
         if attrs[:infDoc]
           # Nota Fiscal
           if attrs[:infDoc][:NF]
-            @nf = create_resources(Nf, attrs[:infDoc][:NF])
+            @nfs = create_resources(Nf, attrs[:infDoc][:NF])
           end
 
           # Nota Fiscal Eletronica
           if attrs[:infDoc][:NFe]
-            @nfe = create_resources(Nfe, attrs[:infDoc][:NFe])
+            @nfes = create_resources(Nfe, attrs[:infDoc][:NFe])
           end
 
           # Outros Documentos
           if attrs[:infDoc][:infOutros]
-            @other = create_resources(OtherDocument, attrs[:infDoc][:infOutros])
+            @other_documents = create_resources(OtherDocument, attrs[:infDoc][:infOutros])
           end
 
           # Documentos Anteriores
           if attrs[:infDoc][:idDocAnt]
-            @previous = create_resources(PreviousDocument, attrs[:infDoc][:idDocAnt])
+            @previous_documents = create_resources(PreviousDocument, attrs[:infDoc][:idDocAnt])
           end
         end
 
         # Seguro
         if attrs[:seg]
-          @insurance = create_resources(Insurance, attrs[:seg])
+          @insurances = create_resources(Insurance, attrs[:seg])
         end
 
         # Produto Perigoso
         if attrs[:peri]
-          @dangerous_product = create_resources(DangerousProduct, xml[:peri])
+          @dangerous_products = create_resources(DangerousProduct, xml[:peri])
         end
 
         # Veiculos
         if attrs[:peri]
-          @vehicle = create_resources(Vehicle, xml[:veicNovos])
+          @vehicles = create_resources(Vehicle, xml[:veicNovos])
         end
 
         # Cobrancas
         if attrs[:cobr]
-          @billing = create_resources(Billing, xml[:cobr])
+          @billing = Billing.new(xml[:cobr])
         end
 
         if attrs[:infCteSub]
-          @replacement = create_resource(Replacement, attrs[:infCteSub])
+          @replacement = Replacement.new(attrs[:infCteSub])
         end
 
         # Modal

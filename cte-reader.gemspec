@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'cte_reader/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "cte-reader"
+  spec.name          = "cte_reader"
   spec.version       = Cte::Reader::VERSION
   spec.authors       = ["Eduardo Becker"]
   spec.email         = ["cpd02@vedamotors.com.br"]

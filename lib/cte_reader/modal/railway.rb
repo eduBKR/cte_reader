@@ -5,7 +5,7 @@ module Cte
       include CreatorHelper
 
       attr_reader :kind, :flow, :train, :value, :responsible,
-        :railroad_emitter, :railroad, :wagon
+        :railroad_emitter, :railroads, :wagons
 
       # == Fields Values
       #
@@ -36,12 +36,12 @@ module Cte
 
         # Ferovias
         if attrs[:ferroEnv]
-          @railroad = create_resources(Railroad, attrs[:ferroEnv])
+          @railroads = create_resources(Railroad, attrs[:ferroEnv])
         end
 
         # Vagoes
         if attrs[:detVag]
-          @wagon = create_resources(Wagon, attrs[:detVag])
+          @wagons = create_resources(Wagon, attrs[:detVag])
         end
       end
     end

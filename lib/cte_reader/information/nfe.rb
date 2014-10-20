@@ -4,8 +4,8 @@ module Cte
       include AttributeHelper
       include CreatorHelper
 
-      attr_reader :key, :pin, :date, :transport_unit,
-        :cargo_unit
+      attr_reader :key, :pin, :date, :transport_units,
+        :cargo_units
 
       def initialize(attrs = {})
         # Chave da NFe
@@ -17,12 +17,12 @@ module Cte
 
         # Unidade de Transporte
         if attrs[:infUnidTransp]
-          @transport_unit = create_resources(TransportUnit, attrs[:infUnidTransp])
+          @transport_units = create_resources(TransportUnit, attrs[:infUnidTransp])
         end
 
         # Unidade de Carga
         if attrs[:infUnidCarga]
-          @cargo_unit = create_resources(CargoUnit, attrs[:infUnidCarga])
+          @cargo_units = create_resources(CargoUnit, attrs[:infUnidCarga])
         end
       end
     end

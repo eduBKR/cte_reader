@@ -4,7 +4,7 @@ module Cte
       include AttributeHelper
       include CreatorHelper
 
-      attr_reader :kind, :code, :seals, :cargo_unit
+      attr_reader :kind, :code, :seals, :cargo_units
 
       def initialize(attrs = {})
         # Tipo de Transporte
@@ -19,7 +19,7 @@ module Cte
 
         # Unidade de Carga
         if attrs[:infUnidCarga]
-          @cargo_unit = create_resources(CargoUnit, attrs[:infUnidCarga])
+          @cargo_units = create_resources(CargoUnit, attrs[:infUnidCarga])
         end
       end
     end

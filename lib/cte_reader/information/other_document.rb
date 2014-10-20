@@ -5,8 +5,8 @@ module Cte
       include CreatorHelper
 
       attr_reader :kind, :description, :date,
-        :value, :delivery_date, :transport_unit,
-        :cargo_unit
+        :value, :delivery_date, :transport_units,
+        :cargo_units
 
       # == Fields Values
       #
@@ -28,12 +28,12 @@ module Cte
 
         # Unidade de Transporte
         if attrs[:infUnidTransp]
-          @transport_unit = create_resources(TransportUnit, attrs[:infUnidTransp])
+          @transport_units = create_resources(TransportUnit, attrs[:infUnidTransp])
         end
 
         # Unidade de Carga
         if attrs[:infUnidCarga]
-          @cargo_unit = create_resources(CargoUnit, attrs[:infUnidCarga])
+          @cargo_units = create_resources(CargoUnit, attrs[:infUnidCarga])
         end
       end
     end
