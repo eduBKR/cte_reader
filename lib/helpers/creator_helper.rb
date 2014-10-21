@@ -23,6 +23,8 @@ module CreatorHelper
   def to_array(attrs = {})
     array = []
 
+    return nil unless attrs
+
     if attrs.is_a? Array
       attrs.each do |hash|
         array << hash.map { |key, value| value }

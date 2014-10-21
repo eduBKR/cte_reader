@@ -42,17 +42,17 @@ module Cte
 
         # Produto Perigoso
         if attrs[:peri]
-          @dangerous_products = create_resources(DangerousProduct, xml[:peri])
+          @dangerous_products = create_resources(DangerousProduct, attrs[:peri])
         end
 
         # Veiculos
         if attrs[:peri]
-          @vehicles = create_resources(Vehicle, xml[:veicNovos])
+          @vehicles = create_resources(Vehicle, attrs[:veicNovos])
         end
 
         # Cobrancas
         if attrs[:cobr]
-          @billing = Billing.new(xml[:cobr])
+          @billing = Billing.new(attrs[:cobr])
         end
 
         if attrs[:infCteSub]
