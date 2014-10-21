@@ -1,7 +1,7 @@
 module Cte
   module Reader
     class Authorization
-      include ::AttributeHelper
+      include AttributeHelper
 
       attr_reader :cnpj, :cpf
 

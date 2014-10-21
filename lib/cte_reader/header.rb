@@ -1,7 +1,7 @@
 module Cte
   module Reader
     class Header
-      include ::AttributeHelper
+      include AttributeHelper
 
       attr_reader :state_code, :cfop, :operation, :payment, :model,
         :serie, :number, :emission, :orientation, :emission_kind,
