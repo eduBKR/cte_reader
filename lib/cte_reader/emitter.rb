@@ -1,16 +1,14 @@
-module Cte
-  module Reader
-    class Emitter
-      attr_reader :person, :address
+module CteReader
+  class Emitter
+    attr_reader :person, :address
 
-      def initialize(attrs = {})
-        # Pessoa
-        @person = Person.new(attrs)
+    def initialize(attrs = {})
+      # Pessoa
+      @person = Person.new(attrs)
 
-        # Endereco
-        if attrs[:enderEmit]
-          @address = Address.new(attrs[:enderEmit])
-        end
+      # Endereco
+      if attrs[:enderEmit]
+        @address = Address.new(attrs[:enderEmit])
       end
     end
   end

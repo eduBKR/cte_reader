@@ -5,7 +5,7 @@ require 'cte_reader/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "cte_reader"
-  spec.version       = Cte::Reader::VERSION
+  spec.version       = CteReader::VERSION
   spec.authors       = ["Eduardo Becker"]
   spec.email         = ["cpd02@vedamotors.com.br"]
   spec.summary       = %q{CTe XML Extractor}

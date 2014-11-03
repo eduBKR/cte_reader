@@ -1,8 +1,8 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Cte do
+describe CteReader::Cte do
   let(:file) { File.open(File.expand_path("../../files/sample-cte.xml", __FILE__))}
-  let(:cte) { Cte::Reader::Cte.new(File.open(file)) }
+  let(:cte) { CteReader::Base.read(File.open(file)) }
 
   it '#version_schema' do
     cte.version_schema.must_equal '2.00'
@@ -16,28 +16,28 @@ describe Cte::Reader::Cte do
     cte.version.must_equal '2.00'
   end
 
-  it '#key' do
-    cte.key.must_equal 'CTe421135201476170039509622024098982747234729'
-  end
-
   it '#modal_version' do
     cte.modal_version.must_equal '2.00'
   end
 
   it '#header' do
-    cte.header.must_be_instance_of Cte::Reader::Header
+    cte.header.must_be_instance_of CteReader::Header
+  end
+
+  it '#header' do
+    cte.protocol.must_be_instance_of CteReader::Protocol
   end
 
   it '#complement' do
-    cte.complement.must_be_instance_of Cte::Reader::Complement
+    cte.complement.must_be_instance_of CteReader::Complement
   end
 
   it '#emitter' do
-    cte.emitter.must_be_instance_of Cte::Reader::Emitter
+    cte.emitter.must_be_instance_of CteReader::Emitter
   end
 
   it '#sender' do
-    cte.sender.must_be_instance_of Cte::Reader::Sender
+    cte.sender.must_be_instance_of CteReader::Sender
   end
 
   it '#dispatcher' do
@@ -49,15 +49,15 @@ describe Cte::Reader::Cte do
   end
 
   it '#recipient' do
-    cte.recipient.must_be_instance_of Cte::Reader::Recipient
+    cte.recipient.must_be_instance_of CteReader::Recipient
   end
 
   it '#tax' do
-    cte.tax.must_be_instance_of Cte::Reader::Tax
+    cte.tax.must_be_instance_of CteReader::Tax
   end
 
   it '#information' do
-    cte.information.must_be_instance_of Cte::Reader::Information
+    cte.information.must_be_instance_of CteReader::Information
   end
 
   it '#complementary_key' do

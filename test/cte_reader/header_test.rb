@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Header do
+describe CteReader::Header do
   def cte_hash
     {
       cUF: 'ES',
@@ -40,7 +40,7 @@ describe Cte::Reader::Header do
     }
   end
 
-  let(:header) { Cte::Reader::Header.new(cte_hash) }
+  let(:header) { CteReader::Header.new(cte_hash) }
 
   it '#state_code' do
     header.state_code.must_equal cte_hash[:cUF]
@@ -74,8 +74,8 @@ describe Cte::Reader::Header do
     header.number.must_equal cte_hash[:nCT]
   end
 
-  it '#emission' do
-    header.emission.must_equal cte_hash[:dhEmi]
+  it '#emission_date' do
+    header.emission_date.must_equal cte_hash[:dhEmi]
   end
 
   it '#orientation' do
@@ -130,8 +130,8 @@ describe Cte::Reader::Header do
     header.city_code_start.must_equal cte_hash[:cMunIni]
   end
 
-  it '#city_start' do
-    header.city_start.must_equal cte_hash[:xMunIni]
+  it '#city_name_start' do
+    header.city_name_start.must_equal cte_hash[:xMunIni]
   end
 
   it '#state_start' do

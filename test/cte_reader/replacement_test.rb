@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Replacement do
+describe CteReader::Replacement do
   def cte_hash
     {
       chCte: '082134687252023014682731642803162143',
@@ -23,7 +23,7 @@ describe Cte::Reader::Replacement do
     }
   end
 
-  let(:receiver) { Cte::Reader::Replacement.new(cte_hash) }
+  let(:receiver) { CteReader::Replacement.new(cte_hash) }
 
   it '#key' do
     receiver.key.must_equal cte_hash[:chCte]

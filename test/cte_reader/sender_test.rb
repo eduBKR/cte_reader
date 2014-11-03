@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Sender do
+describe CteReader::Sender do
   def cte_hash
     {
       CNPJ: '58571647000153',
@@ -36,17 +36,17 @@ describe Cte::Reader::Sender do
     }
   end
 
-  let(:sender) { Cte::Reader::Sender.new(cte_hash) }
+  let(:sender) { CteReader::Sender.new(cte_hash) }
 
   it '#person' do
-    sender.person.must_be_instance_of Cte::Reader::Person
+    sender.person.must_be_instance_of CteReader::Person
   end
 
   it '#address' do
-    sender.address.must_be_instance_of Cte::Reader::Address
+    sender.address.must_be_instance_of CteReader::Address
   end
 
   it '#local' do
-    sender.local.must_be_instance_of Cte::Reader::Address
+    sender.local.must_be_instance_of CteReader::Address
   end
 end

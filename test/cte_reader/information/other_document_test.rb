@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::OtherDocument do
+describe CteReader::OtherDocument do
   def cte_hash
     {
       tpDoc: '99',
@@ -24,7 +24,7 @@ describe Cte::Reader::OtherDocument do
     }
   end
 
-  let(:document) { Cte::Reader::OtherDocument.new(cte_hash) }
+  let(:document) { CteReader::OtherDocument.new(cte_hash) }
 
   it '#kind' do
     document.kind.must_equal cte_hash[:tpDoc]
@@ -51,7 +51,7 @@ describe Cte::Reader::OtherDocument do
   end
 
   it '#transport_units' do
-    document.transport_units.first.must_be_instance_of Cte::Reader::TransportUnit
+    document.transport_units.first.must_be_instance_of CteReader::TransportUnit
   end
 
   it '#cargo_units' do
@@ -59,6 +59,6 @@ describe Cte::Reader::OtherDocument do
   end
 
   it '#cargo_units' do
-    document.cargo_units.first.must_be_instance_of Cte::Reader::CargoUnit
+    document.cargo_units.first.must_be_instance_of CteReader::CargoUnit
   end
 end

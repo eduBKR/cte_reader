@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Vehicle do
+describe CteReader::Vehicle do
   def cte_hash
     {
       chassi: '12BJH1238UJDA',
@@ -30,7 +30,7 @@ describe Cte::Reader::Vehicle do
     }
   end
 
-  let(:vehicle) { Cte::Reader::Vehicle.new(cte_hash) }
+  let(:vehicle) { CteReader::Vehicle.new(cte_hash) }
 
   it '#chassi' do
     vehicle.chassi.must_equal cte_hash[:chassi]
@@ -101,6 +101,6 @@ describe Cte::Reader::Vehicle do
   end
 
   it '#owner' do
-    vehicle.owner.must_be_instance_of Cte::Reader::Person
+    vehicle.owner.must_be_instance_of CteReader::Person
   end
 end

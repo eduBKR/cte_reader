@@ -1,85 +1,101 @@
-module Cte
-  module Reader
-    class Cte
-      include AttributeHelper
-      include CreatorHelper
+module CteReader
+  class Cte
+    include AttributeHelper
+    include CreatorHelper
 
-      attr_reader :error, :trace, :version, :version_schema, :key, :header,
-        :signature, :complement, :emitter, :sender, :dispatcher, :receiver,
-        :recipient, :tax, :information, :complementary_key, :cancellation_key,
-        :cancellation_date, :authorizations, :service, :modal_version
+    attr_reader :error, :trace, :version, :version_schema, :protocol, :header,
+      :signature, :complement, :emitter, :sender, :dispatcher, :receiver,
+      :recipient, :tax, :information, :complementary_key, :cancellation_key,
+      :cancellation_date, :authorizations, :service, :modal_version
 
-      def initialize(file)
-        xml = file.is_a?(Nokogiri::XML::Document) ? file : Nokogiri::XML(file)
-        xml = xml.to_hash
-
+    def initialize(attrs)
+      if attrs[:cteProc]
         # Versao Schema
-        @version_schema = xml[:cteProc][:versao]
+        @version_schema = attrs[:cteProc][:versao]
         # Assinatura
-        @signature = xml[:cteProc][:CTe][:Signature]
+        @signature = attrs[:cteProc][:CTe][:Signature]
 
-        xml = xml[:cteProc][:CTe][:infCte]
+        if attrs[:cteProc][:protCTe]
+          @protocol = Protocol.new(attrs[:cteProc][:protCTe])
+        end
 
-        # Versao do XML
-        @version = xml[:versao]
-        # Chave do CTe
-        @key = xml[:Id]
+        attrs = attrs[:cteProc][:CTe][:infCte]
+      else
+        attrs = attrs[:CTe][:infCte]
+      end
 
-        # Cabecalho
-        @header = Header.new(xml[:ide])
+      # Versao do XML
+      @version = attrs[:versao]
+      # Chave do CTe
+      @number = attrs[:Id]
+
+      # Cabecalho
+      @header = Header.new(attrs[:ide])
+      
+      if attrs[:compl]
         # Complemento
-        @complement = Complement.new(xml[:compl])
-        # Emitente
-        @emitter = Emitter.new(xml[:emit])
-        # Remetente
-        @sender = Sender.new(xml[:rem])
+        @complement = Complement.new(attrs[:compl])
+      end
 
-        # Expedidor
-        if xml[:exped]
-          dispatcher = Dispatcher.new(xml[:exped])
-        end
+      # Emitente
+      @emitter = Emitter.new(attrs[:emit])
+      # Remetente
+      @sender = Sender.new(attrs[:rem])
 
-        # Recebedor
-        if xml[:receb]
-          @receiver = Receiver.new(xml[:receb])
-        end
+      # Expedidor
+      if attrs[:exped]
+        dispatcher = Dispatcher.new(attrs[:exped])
+      end
 
-        # Destinatario
-        @recipient = Recipient.new(xml[:dest])
-        # Servico
-        @service = Service.new(xml[:vPrest])
-        # Impostos
-        @tax = Tax.new(xml[:imp])
+      # Recebedor
+      if attrs[:receb]
+        @receiver = Receiver.new(attrs[:receb])
+      end
+
+      # Destinatario
+      @recipient = Recipient.new(attrs[:dest])
+      # Servico
+      @service = Service.new(attrs[:vPrest])
+      # Impostos
+      @tax = Tax.new(attrs[:imp])
+
+      if attrs[:infCTeNorm]
         # Informacoes dos produtos transportados
-        @information = Information.new(xml[:infCTeNorm])
-
-        if xml[:infCTeNorm][:infModal]
-          @modal_version = xml[:infCTeNorm][:infModal][:versaoModal]
+        @information = Information.new(attrs[:infCTeNorm])
+        
+        if attrs[:infCTeNorm][:infModal]
+          @modal_version = attrs[:infCTeNorm][:infModal][:versaoModal]
         end
-
-        if xml[:infCteComp]
-          @complementary_key = xml[:infCteComp][:chave]
-        end
-
-        if xml[:infCteAnu]
-          @cancellation_key = xml[:infCteAnu][:chCte]
-          @cancellation_date = xml[:infCteAnu][:dEmi]
-        end
-
-        if xml[:autXML]
-          @authorizations = create_resources(Authorization, xml[:autXML])
-        end
-
-      rescue => exception
-        @error = exception
-        @trace = exception.backtrace
-      ensure
-        file.close if file.respond_to? :close
       end
 
-      def error?
-        !error.nil?
+      if attrs[:infCteComp]
+        @complementary_key = attrs[:infCteComp][:chave]
       end
+
+      if attrs[:infCteAnu]
+        @cancellation_key = attrs[:infCteAnu][:chCte]
+        @cancellation_date = attrs[:infCteAnu][:dEmi]
+      end
+
+      if attrs[:autXML]
+        @authorizations = create_resources(Authorization, attrs[:autXML])
+      end
+
+    rescue => exception
+      @error = exception
+      @trace = exception.backtrace
+    end
+
+    def cte?
+      true
+    end
+
+    def lot?
+      false
+    end
+
+    def error?
+      !error.nil?
     end
   end
 end

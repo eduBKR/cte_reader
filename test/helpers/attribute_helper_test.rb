@@ -1,8 +1,8 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::AttributeHelper do
+describe CteReader::AttributeHelper do
   class AttributeTest
-    include Cte::Reader::AttributeHelper
+    include CteReader::AttributeHelper
     attr_accessor :first_name, :last_name
 
     def initialize( attrs= {})

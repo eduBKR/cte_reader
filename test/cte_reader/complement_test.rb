@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Complement do
+describe CteReader::Complement do
   def cte_hash
     {
       xCaracAd: 'REENTREGA;',
@@ -66,7 +66,7 @@ describe Cte::Reader::Complement do
     }
   end
 
-  let(:complement) { Cte::Reader::Complement.new(cte_hash) }
+  let(:complement) { CteReader::Complement.new(cte_hash) }
 
   it '#transport_feature' do
     complement.transport_feature.must_equal cte_hash[:xCaracAd]
@@ -125,7 +125,7 @@ describe Cte::Reader::Complement do
   end
 
   describe 'with data and hour' do
-    let(:complement) { Cte::Reader::Complement.new(hash_with_date) }
+    let(:complement) { CteReader::Complement.new(hash_with_date) }
 
     it '#date_kind' do
       complement.date_kind.must_equal hash_with_date[:Entrega][:comData][:tpPer]
@@ -145,7 +145,7 @@ describe Cte::Reader::Complement do
   end
 
   describe 'with period and interval' do
-    let(:complement) { Cte::Reader::Complement.new(hash_with_deadline) }
+    let(:complement) { CteReader::Complement.new(hash_with_deadline) }
 
     it '#date_kind' do
       complement.date_kind.must_equal hash_with_deadline[:Entrega][:noPeriodo][:tpPer]

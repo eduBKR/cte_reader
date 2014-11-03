@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Highway do
+describe CteReader::Highway do
   def cte_hash
     {
       RNTRC: '512000153',
@@ -53,7 +53,7 @@ describe Cte::Reader::Highway do
     }
   end
 
-  let(:highway) { Cte::Reader::Highway.new(cte_hash) }
+  let(:highway) { CteReader::Highway.new(cte_hash) }
 
   it '#rntrc' do
     highway.rntrc.must_equal cte_hash[:RNTRC]
@@ -71,20 +71,20 @@ describe Cte::Reader::Highway do
     highway.ciot.must_equal cte_hash[:CIOT]
   end
 
-  it '#vehicle' do
-    highway.vehicle.must_be_instance_of Cte::Reader::Vehicle
+  it '#vehicles' do
+    highway.vehicles.first.must_be_instance_of CteReader::Vehicle
   end
 
   it '#collections' do
-    highway.collections.first.must_be_instance_of Cte::Reader::Collection
+    highway.collections.first.must_be_instance_of CteReader::Collection
   end
 
   it '#tolls' do
-    highway.tolls.first.must_be_instance_of Cte::Reader::Toll
+    highway.tolls.first.must_be_instance_of CteReader::Toll
   end
 
   it '#drivers' do
-    highway.drivers.first.must_be_instance_of Cte::Reader::Person
+    highway.drivers.first.must_be_instance_of CteReader::Person
   end
 
   it '#seals' do

@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Waterway do
+describe CteReader::Waterway do
   def cte_hash
     {
       vPrest: '150,49',
@@ -22,7 +22,7 @@ describe Cte::Reader::Waterway do
     }
   end
 
-  let(:waterway) { Cte::Reader::Waterway.new(cte_hash) }
+  let(:waterway) { CteReader::Waterway.new(cte_hash) }
 
   it '#value' do
     waterway.value.must_equal cte_hash[:vPrest]

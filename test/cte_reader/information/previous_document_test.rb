@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::PreviousDocument do
+describe CteReader::PreviousDocument do
   def cte_hash
     {
       emiDocAnt: {
@@ -24,10 +24,10 @@ describe Cte::Reader::PreviousDocument do
     }
   end
 
-  let(:document) { Cte::Reader::PreviousDocument.new(cte_hash) }
+  let(:document) { CteReader::PreviousDocument.new(cte_hash) }
 
   it '#emitter' do
-    document.emitter.must_be_instance_of Cte::Reader::Person
+    document.emitter.must_be_instance_of CteReader::Person
   end
 
   it '#documents' do
@@ -39,6 +39,6 @@ describe Cte::Reader::PreviousDocument do
   end
 
   it '#paper_documents' do
-    document.paper_documents.first.must_be_instance_of Cte::Reader::PaperDocument
+    document.paper_documents.first.must_be_instance_of CteReader::PaperDocument
   end
 end

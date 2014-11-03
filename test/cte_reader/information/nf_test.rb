@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Nf do
+describe CteReader::Nf do
   def cte_hash
     {
       nRoma: '138943579',
@@ -35,7 +35,7 @@ describe Cte::Reader::Nf do
     }
   end
 
-  let(:nf) { Cte::Reader::Nf.new(cte_hash) }
+  let(:nf) { CteReader::Nf.new(cte_hash) }
 
   it '#romaneio' do
     nf.romaneio.must_equal cte_hash[:nRoma]
@@ -106,7 +106,7 @@ describe Cte::Reader::Nf do
   end
 
   it '#transport_units' do
-    nf.transport_units.first.must_be_instance_of Cte::Reader::TransportUnit
+    nf.transport_units.first.must_be_instance_of CteReader::TransportUnit
   end
 
   it '#cargo_units' do
@@ -114,6 +114,6 @@ describe Cte::Reader::Nf do
   end
 
   it '#cargo_units' do
-    nf.cargo_units.first.must_be_instance_of Cte::Reader::CargoUnit
+    nf.cargo_units.first.must_be_instance_of CteReader::CargoUnit
   end
 end

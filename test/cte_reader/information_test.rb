@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Information do
+describe CteReader::Information do
   def cte_hash
     {
       infCarga: {
@@ -9,7 +9,7 @@ describe Cte::Reader::Information do
         xOutCat: 'Other'
       },
       infDoc: {
-        NF: [{
+        infNF: [{
           nRoma: '138943579',
           nPed: '1000234',
           mod: '20',
@@ -27,7 +27,7 @@ describe Cte::Reader::Information do
           PIN: '2304765835',
           dPrev: '2000-02-01'
         }],
-        NFe: [{
+        infNFe: [{
           chave: '100101902833404059607922349327532947543001',
           PIN: '2304765835',
           dPrev: '2000-02-01'
@@ -43,21 +43,21 @@ describe Cte::Reader::Information do
     }
   end
 
-  let(:information) { Cte::Reader::Information.new(cte_hash) }
+  let(:information) { CteReader::Information.new(cte_hash) }
 
   it '#cargo' do
-    information.cargo.must_be_instance_of Cte::Reader::Cargo
+    information.cargo.must_be_instance_of CteReader::Cargo
   end
 
   it '#nfs' do
-    information.nfs.first.must_be_instance_of Cte::Reader::Nf
+    information.nfs.first.must_be_instance_of CteReader::Nf
   end
 
   it '#nfes' do
-    information.nfes.first.must_be_instance_of Cte::Reader::Nfe
+    information.nfes.first.must_be_instance_of CteReader::Nfe
   end
 
   it '#other_documents' do
-    information.other_documents.first.must_be_instance_of Cte::Reader::OtherDocument
+    information.other_documents.first.must_be_instance_of CteReader::OtherDocument
   end
 end

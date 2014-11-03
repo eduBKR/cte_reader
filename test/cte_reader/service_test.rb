@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Service do
+describe CteReader::Service do
   def cte_hash
     {
      vTPrest: '1000.00',
@@ -13,7 +13,7 @@ describe Cte::Reader::Service do
     }
   end
 
-  let(:service) { Cte::Reader::Service.new(cte_hash) }
+  let(:service) { CteReader::Service.new(cte_hash) }
 
   it '#total' do
     service.total.must_equal cte_hash[:vTPrest]

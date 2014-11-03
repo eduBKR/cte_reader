@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Railroad do
+describe CteReader::Railroad do
   def cte_hash
     {
       CNPJ: '58571647000153',
@@ -18,7 +18,7 @@ describe Cte::Reader::Railroad do
     }
   end
 
-  let(:railroad) { Cte::Reader::Railroad.new(cte_hash) }
+  let(:railroad) { CteReader::Railroad.new(cte_hash) }
 
   it '#cnpj' do
     railroad.cnpj.must_equal cte_hash[:CNPJ]
@@ -37,6 +37,6 @@ describe Cte::Reader::Railroad do
   end
 
   it '#address' do
-    railroad.address.must_be_instance_of Cte::Reader::Address
+    railroad.address.must_be_instance_of CteReader::Address
   end
 end

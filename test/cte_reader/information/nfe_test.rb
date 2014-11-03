@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Nfe do
+describe CteReader::Nfe do
   def cte_hash
     {
       chave: '100101902833404059607922349327532947543001',
@@ -22,7 +22,7 @@ describe Cte::Reader::Nfe do
     }
   end
 
-  let(:nfe) { Cte::Reader::Nfe.new(cte_hash) }
+  let(:nfe) { CteReader::Nfe.new(cte_hash) }
 
   it '#key' do
     nfe.key.must_equal cte_hash[:chave]
@@ -41,7 +41,7 @@ describe Cte::Reader::Nfe do
   end
 
   it '#transport_units' do
-    nfe.transport_units.first.must_be_instance_of Cte::Reader::TransportUnit
+    nfe.transport_units.first.must_be_instance_of CteReader::TransportUnit
   end
 
   it '#cargo_units' do
@@ -49,6 +49,6 @@ describe Cte::Reader::Nfe do
   end
 
   it '#cargo_units' do
-    nfe.cargo_units.first.must_be_instance_of Cte::Reader::CargoUnit
+    nfe.cargo_units.first.must_be_instance_of CteReader::CargoUnit
   end
 end

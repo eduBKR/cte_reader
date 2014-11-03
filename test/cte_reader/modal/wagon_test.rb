@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Wagon do
+describe CteReader::Wagon do
   def cte_hash
     {
       nVag: '7000153',
@@ -11,7 +11,7 @@ describe Cte::Reader::Wagon do
     }
   end
 
-  let(:wagon) { Cte::Reader::Wagon.new(cte_hash) }
+  let(:wagon) { CteReader::Wagon.new(cte_hash) }
 
   it '#capacity' do
     wagon.capacity.must_equal cte_hash[:cap]

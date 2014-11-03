@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::TransportUnit do
+describe CteReader::TransportUnit do
   def cte_hash
     {
       tpUnidTransp: '00',
@@ -20,7 +20,7 @@ describe Cte::Reader::TransportUnit do
     }
   end
 
-  let(:transport) { Cte::Reader::TransportUnit.new(cte_hash) }
+  let(:transport) { CteReader::TransportUnit.new(cte_hash) }
 
   it '#kind' do
     transport.kind.must_equal cte_hash[:tpUnidTransp]
@@ -39,6 +39,6 @@ describe Cte::Reader::TransportUnit do
   end
 
   it '#cargo_units' do
-    transport.cargo_units.first.must_be_instance_of Cte::Reader::CargoUnit
+    transport.cargo_units.first.must_be_instance_of CteReader::CargoUnit
   end
 end

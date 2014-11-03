@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Railway do
+describe CteReader::Railway do
   def cte_hash
     {
       tpTraf: '3',
@@ -27,7 +27,7 @@ describe Cte::Reader::Railway do
     }
   end
 
-  let(:railway) { Cte::Reader::Railway.new(cte_hash) }
+  let(:railway) { CteReader::Railway.new(cte_hash) }
 
   it '#kind' do
     railway.kind.must_equal cte_hash[:tpTraf]
@@ -53,10 +53,10 @@ describe Cte::Reader::Railway do
   end
 
   it '#railroads' do
-    railway.railroads.first.must_be_instance_of Cte::Reader::Railroad
+    railway.railroads.first.must_be_instance_of CteReader::Railroad
   end
 
   it '#wagons' do
-    railway.wagons.first.must_be_instance_of Cte::Reader::Wagon
+    railway.wagons.first.must_be_instance_of CteReader::Wagon
   end
 end

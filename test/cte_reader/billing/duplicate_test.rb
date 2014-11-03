@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Duplicate do
+describe CteReader::Duplicate do
   def cte_hash
     {
       nDup: '1',
@@ -9,7 +9,7 @@ describe Cte::Reader::Duplicate do
     }
   end
 
-  let(:duplicate) { Cte::Reader::Duplicate.new(cte_hash) }
+  let(:duplicate) { CteReader::Duplicate.new(cte_hash) }
 
   it '#number' do
     duplicate.number.must_equal cte_hash[:nDup]

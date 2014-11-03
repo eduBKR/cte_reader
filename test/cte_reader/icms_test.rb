@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Icms do
+describe CteReader::Icms do
   def cte_hash
     {
       CST: '00',
@@ -20,7 +20,7 @@ describe Cte::Reader::Icms do
     }
   end
 
-  let(:tax) { Cte::Reader::Icms.new(cte_hash) }
+  let(:tax) { CteReader::Icms.new(cte_hash) }
 
   it '#cst' do
     tax.cst.must_equal cte_hash[:CST]

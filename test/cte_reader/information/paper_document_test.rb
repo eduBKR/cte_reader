@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::PaperDocument do
+describe CteReader::PaperDocument do
   def cte_hash
     {
       tpDoc: '99',
@@ -11,7 +11,7 @@ describe Cte::Reader::PaperDocument do
     }
   end
 
-  let(:document) { Cte::Reader::PaperDocument.new(cte_hash) }
+  let(:document) { CteReader::PaperDocument.new(cte_hash) }
 
   it '#kind' do
     document.kind.must_equal cte_hash[:tpDoc]

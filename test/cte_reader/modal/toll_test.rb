@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Toll do
+describe CteReader::Toll do
   def cte_hash
     {
       CNPJForn: '58571647000153',
@@ -10,7 +10,7 @@ describe Cte::Reader::Toll do
     }
   end
 
-  let(:toll) { Cte::Reader::Toll.new(cte_hash) }
+  let(:toll) { CteReader::Toll.new(cte_hash) }
 
   it '#cnpj_supplier' do
     toll.cnpj_supplier.must_equal cte_hash[:CNPJForn]

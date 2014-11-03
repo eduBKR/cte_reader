@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Insurance do
+describe CteReader::Insurance do
   def cte_hash
     {
       respSeg: 'Lorem Ipsum',
@@ -11,7 +11,7 @@ describe Cte::Reader::Insurance do
     }
   end
 
-  let(:insurance) { Cte::Reader::Insurance.new(cte_hash) }
+  let(:insurance) { CteReader::Insurance.new(cte_hash) }
 
   it '#responsible' do
     insurance.responsible.must_equal cte_hash[:respSeg]

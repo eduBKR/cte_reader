@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Airway do
+describe CteReader::Airway do
   def cte_hash
     {
       nMinu: '32',
@@ -21,7 +21,7 @@ describe Cte::Reader::Airway do
     }
   end
 
-  let(:airway) { Cte::Reader::Airway.new(cte_hash) }
+  let(:airway) { CteReader::Airway.new(cte_hash) }
 
   it '#minuta' do
     airway.minuta.must_equal cte_hash[:nMinu]

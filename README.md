@@ -1,4 +1,4 @@
-# Cte::Reader
+# CteReader
 
 TODO: Write a gem description
 

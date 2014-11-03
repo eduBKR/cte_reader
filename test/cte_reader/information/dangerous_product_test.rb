@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::DangerousProduct do
+describe CteReader::DangerousProduct do
   def cte_hash
     {
       nONU: '867031',
@@ -13,7 +13,7 @@ describe Cte::Reader::DangerousProduct do
     }
   end
 
-  let(:product) { Cte::Reader::DangerousProduct.new(cte_hash) }
+  let(:product) { CteReader::DangerousProduct.new(cte_hash) }
 
   it '#onu_number' do
     product.onu_number.must_equal cte_hash[:nONU]

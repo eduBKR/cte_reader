@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Authorization do
+describe CteReader::Authorization do
   def cte_hash
     {
       CNPJ: '99819146000120',
@@ -8,7 +8,7 @@ describe Cte::Reader::Authorization do
     }
   end
 
-  let(:authorization) { Cte::Reader::Authorization.new(cte_hash) }
+  let(:authorization) { CteReader::Authorization.new(cte_hash) }
 
   it '#cnpj' do
     authorization.cnpj.must_equal cte_hash[:CNPJ]

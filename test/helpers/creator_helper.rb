@@ -1,8 +1,8 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::CreatorHelper do
+describe CteReader::CreatorHelper do
   class CreatorTest < Struct.new(:name)
-    include Cte::Reader::CreatorHelper
+    include CteReader::CreatorHelper
   end
 
   class ResourceTest < Struct.new(:name)

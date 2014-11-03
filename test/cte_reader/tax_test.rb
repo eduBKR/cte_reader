@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Tax do
+describe CteReader::Tax do
   def cte_hash
     {
       ICMS: {
@@ -26,14 +26,14 @@ describe Cte::Reader::Tax do
     }
   end
 
-  let(:tax) { Cte::Reader::Tax.new(cte_hash) }
+  let(:tax) { CteReader::Tax.new(cte_hash) }
 
   it '#icms' do
     tax.icms.must_be_instance_of Array
   end
 
   it '#icms' do
-    tax.icms.first.must_be_instance_of Cte::Reader::Icms
+    tax.icms.first.must_be_instance_of CteReader::Icms
   end
 
   it '#total' do

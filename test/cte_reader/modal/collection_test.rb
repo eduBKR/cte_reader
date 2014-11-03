@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Collection do
+describe CteReader::Collection do
   def cte_hash
     {
       serie: '1',
@@ -15,7 +15,7 @@ describe Cte::Reader::Collection do
     }
   end
 
-  let(:collection) { Cte::Reader::Collection.new(cte_hash) }
+  let(:collection) { CteReader::Collection.new(cte_hash) }
 
   it '#serie' do
     collection.serie.must_equal cte_hash[:serie]
@@ -34,6 +34,6 @@ describe Cte::Reader::Collection do
   end
 
   it '#emitter' do
-    collection.emitter.must_be_instance_of Cte::Reader::Person
+    collection.emitter.must_be_instance_of CteReader::Person
   end
 end

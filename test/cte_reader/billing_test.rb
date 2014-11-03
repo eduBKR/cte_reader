@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-describe Cte::Reader::Billing do
+describe CteReader::Billing do
   def cte_hash
     {
       fat:{
@@ -17,7 +17,7 @@ describe Cte::Reader::Billing do
     }
   end
 
-  let(:billing) { Cte::Reader::Billing.new(cte_hash) }
+  let(:billing) { CteReader::Billing.new(cte_hash) }
 
   it '#number' do
     billing.number.must_equal cte_hash[:fat][:nFat]
@@ -36,6 +36,6 @@ describe Cte::Reader::Billing do
   end
 
   it '#duplicates' do
-    billing.duplicates.first.must_be_instance_of Cte::Reader::Duplicate
+    billing.duplicates.first.must_be_instance_of CteReader::Duplicate
   end
 end

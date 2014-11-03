@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Multimodal do
+describe CteReader::Multimodal do
   def cte_hash
     {
       cotm: '7365',
@@ -8,7 +8,7 @@ describe Cte::Reader::Multimodal do
     }
   end
 
-  let(:multimodal) { Cte::Reader::Multimodal.new(cte_hash) }
+  let(:multimodal) { CteReader::Multimodal.new(cte_hash) }
 
   it '#cotm' do
     multimodal.cotm.must_equal cte_hash[:COTM]

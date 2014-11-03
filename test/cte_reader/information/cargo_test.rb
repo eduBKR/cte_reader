@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::Cargo do
+describe CteReader::Cargo do
   def cte_hash
     {
       vCarga: '13.408,87',
@@ -14,7 +14,7 @@ describe Cte::Reader::Cargo do
     }
   end
 
-  let(:cargo) { Cte::Reader::Cargo.new(cte_hash) }
+  let(:cargo) { CteReader::Cargo.new(cte_hash) }
 
   it '#total' do
     cargo.total.must_equal cte_hash[:vCarga]
@@ -33,6 +33,6 @@ describe Cte::Reader::Cargo do
   end
 
   it '#amounts' do
-    cargo.amounts.first.must_be_instance_of Cte::Reader::Amount
+    cargo.amounts.first.must_be_instance_of CteReader::Amount
   end
 end

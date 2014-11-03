@@ -1,6 +1,6 @@
 require File.expand_path("../../../test_helper", __FILE__)
 
-describe Cte::Reader::CargoUnit do
+describe CteReader::CargoUnit do
   def cte_hash
     {
       tpUnidCarga: '13.408,87',
@@ -14,7 +14,7 @@ describe Cte::Reader::CargoUnit do
     }
   end
 
-  let(:cargo) { Cte::Reader::CargoUnit.new(cte_hash) }
+  let(:cargo) { CteReader::CargoUnit.new(cte_hash) }
 
   it '#kind' do
     cargo.kind.must_equal cte_hash[:tpUnidCarga]
